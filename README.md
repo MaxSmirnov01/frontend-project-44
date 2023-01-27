@@ -9,3 +9,6 @@ game is even:
 
 game calc:
 [![asciicast](https://asciinema.org/a/Ft2fXSBAqW9DKyAKaPcyJtAt8.svg)](https://asciinema.org/a/Ft2fXSBAqW9DKyAKaPcyJtAt8)
+
+game gcd:
+[![asciicast](https://asciinema.org/a/qs4phYA1lGszd6gTXt68qJUau.svg)](https://asciinema.org/a/qs4phYA1lGszd6gTXt68qJUau)
