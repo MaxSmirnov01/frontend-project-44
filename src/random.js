@@ -11,3 +11,5 @@ export const getRandomOperator = () => {
   const sign = oper[random];
   return sign;
 };
+
+export const getRandomIntNumUpTo10 = () => Math.ceil(Math.random() * 9);

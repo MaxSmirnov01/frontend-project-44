@@ -13,7 +13,7 @@ const generalGameLogic = (gameQuestion, gameTask) => {
     if (answer === result) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
