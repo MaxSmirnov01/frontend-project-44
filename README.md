@@ -12,3 +12,6 @@ game calc:
 
 game gcd:
 [![asciicast](https://asciinema.org/a/qs4phYA1lGszd6gTXt68qJUau.svg)](https://asciinema.org/a/qs4phYA1lGszd6gTXt68qJUau)
+
+game progression:
+[![asciicast](https://asciinema.org/a/1mBxYt6yyc8BewWBHU6eVcCfh.svg)](https://asciinema.org/a/1mBxYt6yyc8BewWBHU6eVcCfh)
