@@ -1,28 +1,19 @@
-import readlineSync from 'readline-sync';
 import { getRandomIntNum } from '../random.js';
+import generalGameLogic from '../index.js';
 
-const gameEven = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  for (let i = 0; i < 3; i += 1) {
-    const numRandom = getRandomIntNum();
-    console.log(`Question: ${numRandom}`);
-    const answer = readlineSync.question('Your answer: ');
-    if ((numRandom % 2 === 0 && answer === 'yes') || (numRandom % 2 !== 0 && answer === 'no')) {
-      console.log('Correct!');
-    } else if (answer === 'yes') {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
+const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const gameTask = () => {
+  const question = getRandomIntNum();
+  let result = '';
+  if (question % 2 === 0) {
+    result = 'yes';
+  } else {
+    result = 'no';
   }
-  console.log(`Congratulations, ${name}!`);
+  return [question, result];
 };
+
+const gameEven = () => generalGameLogic(gameQuestion, gameTask);
 
 export default gameEven;
