@@ -4,8 +4,8 @@ import getRandomInRange from '../random.js';
 const rules = 'Find the greatest common divisor of given numbers.';
 
 const generateRound = () => {
-  const number1 = getRandomInRange(0, 50);
-  const number2 = getRandomInRange(0, 50);
+  const number1 = getRandomInRange(1, 50);
+  const number2 = getRandomInRange(1, 50);
   const question = `${number1} ${number2}`;
   let correctAnswer = 0;
   const min = number1 < number2 ? number1 : number2;
