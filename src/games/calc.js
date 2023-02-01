@@ -1,30 +1,37 @@
 import generalGameLogic from '../index.js';
-import { getRandomIntNum, getRandomOperator } from '../random.js';
+import getRandomInRange from '../random.js';
 
-const gameQuestion = 'What is the result of the expression?';
+const rules = 'What is the result of the expression?';
 
-const gameTask = () => {
-  const number1 = getRandomIntNum();
-  const number2 = getRandomIntNum();
+const getRandomOperator = () => {
+  const oper = ['+', '-', '*'];
+  const random = Math.floor(Math.random() * oper.length);
+  const sign = oper[random];
+  return sign;
+};
+
+const generateRound = () => {
+  const number1 = getRandomInRange(0, 50);
+  const number2 = getRandomInRange(0, 50);
   const sign = getRandomOperator();
   const question = `${number1} ${sign} ${number2}`;
-  let result = 0;
+  let correctAnswer = 0;
   switch (sign) {
     case '+':
-      result = number1 + number2;
+      correctAnswer = number1 + number2;
       break;
     case '-':
-      result = number1 - number2;
+      correctAnswer = number1 - number2;
       break;
     case '*':
-      result = number1 * number2;
+      correctAnswer = number1 * number2;
       break;
     default:
       return null;
   }
-  return [question, String(result)];
+  return [question, String(correctAnswer)];
 };
 
-const gameCalc = () => generalGameLogic(gameQuestion, gameTask);
+const runCalcGame = () => generalGameLogic(rules, generateRound);
 
-export default gameCalc;
+export default runCalcGame;

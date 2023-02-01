@@ -1,19 +1,19 @@
-import { getRandomIntNum } from '../random.js';
+import getRandomInRange from '../random.js';
 import generalGameLogic from '../index.js';
 
-const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameTask = () => {
-  const question = getRandomIntNum();
-  let result = '';
+const generateRound = () => {
+  const question = getRandomInRange(0, 100);
+  let correctAnswer = '';
   if (question % 2 === 0) {
-    result = 'yes';
+    correctAnswer = 'yes';
   } else {
-    result = 'no';
+    correctAnswer = 'no';
   }
-  return [question, result];
+  return [question, correctAnswer];
 };
 
-const gameEven = () => generalGameLogic(gameQuestion, gameTask);
+const runEvenGame = () => generalGameLogic(rules, generateRound);
 
-export default gameEven;
+export default runEvenGame;

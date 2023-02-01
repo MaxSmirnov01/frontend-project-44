@@ -1,25 +1,21 @@
 import generalGameLogic from '../index.js';
-import { getRandomIntNum, getRandomIntNumUpTo10 } from '../random.js';
+import getRandomInRange from '../random.js';
 
-const gameQuestion = 'What number is missing in the progression?';
+const rules = 'What number is missing in the progression?';
 
-const step = getRandomIntNumUpTo10();
-
-const getProgression = () => {
-  const number1 = getRandomIntNum();
-  const arrProg = [number1];
+const getProgression = (progressionStart, progressionStep) => {
+  const prog = [progressionStart];
   for (let i = 1; i < 10; i += 1) {
-    arrProg.push(number1 + step * i);
+    prog.push(progressionStart + progressionStep * i);
   }
-  return arrProg;
+  return prog;
 };
 
-const getNewProgression = () => {
-  const position = getRandomIntNumUpTo10();
-  const newProgression = getProgression();
+const getNewProgression = (prog, hiddenItem) => {
+  const newProgression = prog.slice(0);
   const resultArr = [];
   for (let i = 0; i < newProgression.length; i += 1) {
-    if (i !== position) {
+    if (i !== hiddenItem) {
       resultArr.push(newProgression[i]);
     } else {
       resultArr.push('..');
@@ -28,18 +24,22 @@ const getNewProgression = () => {
   return resultArr;
 };
 
-const gameTask = () => {
-  const question = getNewProgression();
-  let result = 0;
+const generateRound = () => {
+  const step = getRandomInRange(1, 10);
+  const number1 = getRandomInRange(0, 20);
+  const hiddenNumber = getRandomInRange(1, 9);
+  const progression = getProgression(number1, step);
+  const question = getNewProgression(progression, hiddenNumber);
+  let correctAnswer = 0;
   for (let i = 0; i < question.length; i += 1) {
     if (question[i] === '..') {
-      result = question[i - 1] + step;
+      correctAnswer = number1 + step * hiddenNumber;
       break;
     }
   }
-  return [question.join(' '), String(result)];
+  return [question.join(' '), String(correctAnswer)];
 };
 
-const gameProgression = () => generalGameLogic(gameQuestion, gameTask);
+const runProgressionGame = () => generalGameLogic(rules, generateRound);
 
-export default gameProgression;
+export default runProgressionGame;

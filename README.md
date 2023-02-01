@@ -4,6 +4,9 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/dbcde8cc1e1df0fbf81b/maintainability)](https://codeclimate.com/github/MaxSmirnov01/frontend-project-44/maintainability)
 
+_**brain games**_:
+These are 5 logical thinking games. Each game asks questions that need to be answered correctly. After three correct answers, the game is over. Wrong answers end the game and are asked to play again.
+
 _**Install games**_:
 
 1. git clone
