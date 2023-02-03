@@ -3,14 +3,11 @@ import generalGameLogic from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+const isEven = (num) => num % 2 === 0;
+
 const generateRound = () => {
   const question = getRandomInRange(0, 100);
-  let correctAnswer = '';
-  if (question % 2 === 0) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
