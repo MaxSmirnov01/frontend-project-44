@@ -17,11 +17,11 @@ const generateRound = () => {
   const progressionLength = getRandomInRange(5, 10);
   const hiddenIndex = getRandomInRange(1, progressionLength - 1);
   const progression = getProgression(number1, step, progressionLength);
-  const correctAnswer = progression[hiddenIndex];
+  const correctAnswer = String(progression[hiddenIndex]);
   progression[hiddenIndex] = '..';
   const question = progression.join(' ');
 
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer];
 };
 
 const runProgressionGame = () => generalGameLogic(rules, generateRound);

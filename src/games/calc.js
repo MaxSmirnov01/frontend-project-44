@@ -9,21 +9,16 @@ const getRandomOperator = () => {
 };
 
 const calculation = (num1, num2, oper) => {
-  let correctAnswer = 0;
   switch (oper) {
     case '+':
-      correctAnswer = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      correctAnswer = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      correctAnswer = num1 * num2;
-      break;
+      return num1 * num2;
     default:
       throw new Error(`Operator ${oper} - is incorrect!`);
   }
-  return correctAnswer;
 };
 
 const generateRound = () => {
@@ -31,9 +26,9 @@ const generateRound = () => {
   const number2 = getRandomInRange(0, 50);
   const oper = getRandomOperator();
   const question = `${number1} ${oper} ${number2}`;
-  const correctAnswer = calculation(number1, number2, oper);
+  const correctAnswer = String(calculation(number1, number2, oper));
 
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer];
 };
 
 const runCalcGame = () => generalGameLogic(rules, generateRound);
