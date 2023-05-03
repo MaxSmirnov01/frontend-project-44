@@ -9,11 +9,17 @@ These are 5 logical thinking games. Each game asks questions that need to be ans
 
 _**Install games**_:
 
-1. git clone
+```
+git clone
+```
 
-2. make install
+```
+make install
+```
 
-3. npm link
+```
+npm link
+```
 
 _**game even**_:
 [![asciicast](https://asciinema.org/a/EmETix3cCGHeyzouUJfiUCykl.svg)](https://asciinema.org/a/EmETix3cCGHeyzouUJfiUCykl)
