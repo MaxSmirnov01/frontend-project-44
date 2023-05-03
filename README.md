@@ -15,8 +15,8 @@ _**Install games**_:
 
 3. npm link
 
-_**game is even**_:
-[![asciicast](https://asciinema.org/a/JOyFlHbMndAJt2eG4hxN3YWLU.svg)](https://asciinema.org/a/JOyFlHbMndAJt2eG4hxN3YWLU)
+_**game even**_:
+[![asciicast](https://asciinema.org/a/EmETix3cCGHeyzouUJfiUCykl.svg)](https://asciinema.org/a/EmETix3cCGHeyzouUJfiUCykl)
 
 _**game calc**_:
 [![asciicast](https://asciinema.org/a/Ft2fXSBAqW9DKyAKaPcyJtAt8.svg)](https://asciinema.org/a/Ft2fXSBAqW9DKyAKaPcyJtAt8)
